@@ -1,9 +1,13 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import HomePage from "./HomePage/page";
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
+  return <HomePage />;
+}
+
+{
+  /* <main className={styles.main}>
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
@@ -90,6 +94,5 @@ export default function Home() {
           </p>
         </a>
       </div>
-    </main>
-  );
+    </main> */
 }
