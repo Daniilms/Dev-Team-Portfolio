@@ -4,15 +4,15 @@ export const headerLinksList: HeaderLinkT[] = [
     id: 1,
   },
   {
-    linkName: "projects",
+    linkName: "Projects",
     id: 2,
   },
   {
-    linkName: "pages",
+    linkName: "Pages",
     id: 3,
   },
   {
-    linkName: "contact",
+    linkName: "Contact",
     id: 4,
   },
 ];

@@ -1,6 +1,13 @@
 .links {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0%;
   margin: 0 0 0 10px;
 }
 .links:first-child {
   margin: 0 0 0 0;
+}
+.color {
+  color: white;
 }
