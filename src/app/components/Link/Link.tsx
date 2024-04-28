@@ -6,7 +6,7 @@ interface HeaderLinkProps {
 const Link = ({ linkName }: HeaderLinkProps) => {
   return (
     <a className={styles.links}>
-      <span>{linkName}</span>
+      <span className={styles.color}>{linkName}</span>
     </a>
   );
 };

@@ -1,0 +1,51 @@
+.container {
+  margin: 0 auto;
+  max-width: 1300px;
+}
+.smallContainer {
+  margin: 0 auto;
+  max-width: 1170px;
+  padding: 256px 107px;
+}
+.aboutBackground {
+  background-image: url("/background-circle.svg");
+  background-repeat: no-repeat;
+  background-position: top -270px left -150px;
+}
+.aboutWrp {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flexBeetween {
+  display: flex;
+  justify-content: space-between;
+}
+.hero {
+  background-color: black;
+  height: 570px;
+}
+.text {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0%;
+}
+.textBig {
+  display: flex;
+  flex-direction: column;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 44px;
+  letter-spacing: 0%;
+  margin: 0 0 0 0;
+}
+.textBig span:last-child {
+  align-self: center;
+}
