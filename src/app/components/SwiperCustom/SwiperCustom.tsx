@@ -1,13 +1,47 @@
 "use client";
-import { log } from "console";
+
 import styles from "./SwiperCustom.module.css";
-import { useState } from "react";
-import { url } from "inspector";
+import { useCallback, useEffect, useRef, useState } from "react";
+
 import ViewButton from "../ViewButton/ViewButton";
+import { log } from "console";
 
 const SwiperCustom = () => {
   const array = ["/collibri-slide.jpg", "/bird-slide.jpg", "/bird-2-slide.jpg"];
+  const ref = useRef(null);
+  const centerShadow = 37;
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [shadowPosition, setShadowPosition] = useState({
+    x: 0,
+    y: 0,
+  });
+  const [isMouseEntered, setIsMouseEntered] = useState(false);
+
+  const handlerMoveMouse = useCallback(
+    (evt: React.MouseEvent<HTMLDivElement>) => {
+      const maxHeight = 630;
+      let rect = null;
+      if (ref.current !== null) {
+        rect = ref.current.getBoundingClientRect();
+      }
+
+      if (evt.y >= maxHeight) {
+        setIsMouseEntered(false);
+      } else {
+        setIsMouseEntered(true);
+      }
+
+      if (isMouseEntered) {
+        setShadowPosition({ x: 0, y: 0 });
+      }
+      setShadowPosition({
+        x: evt.x - rect.x - centerShadow,
+        y: evt.y - rect.y - centerShadow,
+      });
+    },
+    [isMouseEntered, shadowPosition]
+  );
+
   const nextSlide = () => {
     if (currentSlide < array.length - 1) {
       setCurrentSlide(currentSlide + 1);
@@ -25,6 +59,14 @@ const SwiperCustom = () => {
     }
   };
 
+  useEffect(() => {
+    const _ref = ref.current;
+    console.log(isMouseEntered);
+    _ref.addEventListener("mousemove", handlerMoveMouse);
+    return () => {
+      _ref.removeEventListener("mousemove", handlerMoveMouse);
+    };
+  }, [handlerMoveMouse, isMouseEntered]);
   return (
     <div className={styles.swiper}>
       <button className={styles.button} onClick={previousSlide}>
@@ -49,9 +91,21 @@ const SwiperCustom = () => {
         </svg>
       </button>
       <div
-        className={styles.slide}
+        ref={ref}
+        className={`${styles.slide}`}
         style={{ backgroundImage: `url(${array[currentSlide]})` }}
       >
+        <div
+          style={{
+            left: shadowPosition.x,
+            top: shadowPosition.y,
+          }}
+          className={
+            isMouseEntered
+              ? styles.slideCursorShadow
+              : styles.slideCursorShadowInvisible
+          }
+        ></div>
         <div className={styles.content}>
           <div>
             <span className={styles.span}></span>
