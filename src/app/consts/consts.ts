@@ -38,3 +38,41 @@ export type HeaderLinkT = {
   linkName: string;
   id: number;
 };
+export const capabilitiesCardList: capabilitiesCardListT[] = [
+  {
+    capabilitiesCardText: "Web Design and Development",
+    capabilitiesCardImageSrc: "/WDD-background-image.jpeg",
+    id: "1",
+    capabilitiesCardSvgSrc: "/cup.svg",
+    capabilitiesCardSvgAlt: "cup",
+  },
+  {
+    capabilitiesCardText: "Brand Strategy Accelerator",
+    capabilitiesCardImageSrc: "/brand-background-image.jpeg",
+    id: "12",
+    capabilitiesCardSvgSrc: "/settings.svg",
+    capabilitiesCardSvgAlt: "settings",
+  },
+  {
+    capabilitiesCardText: "Packaging and Brand Identity",
+    capabilitiesCardImageSrc: "/packaging-background-image.jpeg",
+    id: "13",
+    capabilitiesCardSvgSrc: "/anchor.svg",
+    capabilitiesCardSvgAlt: "anchor",
+  },
+  {
+    capabilitiesCardText: "Content Production",
+    capabilitiesCardImageSrc: "/content-background-image.jpeg",
+    id: "14",
+    capabilitiesCardSvgSrc: "/book.svg",
+    capabilitiesCardSvgAlt: "book",
+  },
+];
+
+export type capabilitiesCardListT = {
+  capabilitiesCardText: string;
+  capabilitiesCardImageSrc: string;
+  id: string;
+  capabilitiesCardSvgSrc: string;
+  capabilitiesCardSvgAlt: string;
+};

@@ -1,5 +1,6 @@
 import Header from "../components/Header/Header";
 import SwiperCustom from "../components/SwiperCustom/SwiperCustom";
+import СapabilitiesCardList from "../components/СapabilitiesCardList/СapabilitiesCardList";
 import styles from "./page.module.css";
 const HomePage = () => {
   return (
@@ -19,24 +20,32 @@ const HomePage = () => {
               <span>that is proud of our work 👋</span>
             </h2>
           </div>
-          <div className={styles.flexBeetween}>
+          <div className={`${styles.flexBeetween} ${styles.aboutContent}`}>
             <div>
-              <span></span>
-              <p>
+              <span className={styles.aboutSpanStroke}></span>
+              <p className={styles.aboutText}>
                 Over 10 years of combined experience, and know a thing or two
                 about designing websites and mobile apps.
               </p>
             </div>
-            <div>
-              <p>
+            <div className={styles.aboutContentElement}>
+              <p className={styles.aboutText}>
                 Were divided, a moved night light darkness winged may also make
                 man for. Winged the for Earth creeping appear evening, gathered
                 Forth so he. Life that dry of created greater can't also
                 gathered female green.
               </p>
-              <button></button>
+              <button className={styles.button}>
+                <p>about us</p>
+                <p className={styles.buttonEclipse}></p>
+              </button>
             </div>
           </div>
+        </div>
+      </section>
+      <section className={styles.capabilities}>
+        <div className={styles.capabilietesContainer}>
+          <СapabilitiesCardList />
         </div>
       </section>
     </>

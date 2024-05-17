@@ -1,3 +1,4 @@
+import { LegacyRef } from "react";
 import styles from "./ViewButton.module.css";
 
 const ViewButton = () => {
